@@ -1,0 +1,40 @@
+{
+    "name" : "Azhar Rizky Aulia",
+    "age" : 17,
+    "hobi" : [
+        "Main Game",
+        "Membaca",
+        "Menggambar"
+    ],
+    "github" : {
+        "username": "AzharRizkyAulia",
+        "repository": 14
+    },
+    "articles" : [
+        {
+            "id" : 1,
+            "title" : "Flutter: Introduction",
+            "subtitle" : "Beautiful native apps with Dart Language"
+        },
+        {
+            "id" : 2,
+            "title" : "Flutter: LinearLayout",
+            "subtitle" : "How to design LinearLayout in flutter"
+        },
+        {
+            "id" : 3,
+            "title" : "Flutter: RelativeLayout",
+            "subtitle" : "How to design RelativeLayout in flutter"
+        }
+    ],
+    "contact" : {
+        "1" : {
+            "name" : "Personal",
+            "phone" : "0831398413123"
+        },
+        "2" : {
+            "name" : "Work",
+            "phone" : "0834131313123"
+        }
+    }
+}
