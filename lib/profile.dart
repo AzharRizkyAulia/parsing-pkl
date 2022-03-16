@@ -8,10 +8,10 @@ class Profile extends StatelessWidget {
       appBar: AppBar(
           title: Center(
               child: Text(
-            "Rumus Bangun Datar",
+            "Read JSON",
             style: TextStyle(color: Colors.white),
           )),
-          backgroundColor: Colors.lightBlueAccent),
+          backgroundColor: Colors.pinkAccent),
       body: Container(
         decoration: BoxDecoration(
           color: Colors.white,
@@ -27,25 +27,21 @@ class Profile extends StatelessWidget {
                     Container(
                       width: 400,
                       height: 100,
+                      margin: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          color: Colors.pinkAccent,
+                          borderRadius: BorderRadius.circular(10)),
                       child: Center(
                         child: Text(
-                          "Biodata Diri",
-                          style: TextStyle(fontSize: 30, color: Colors.black),
+                          "My Profile",
+                          style: TextStyle(fontSize: 30, color: Colors.white),
                         ),
                       ),
                     ),
                     Container(
                       width: 400,
-                      height: 300,
-                      margin: EdgeInsets.all(10),
-                      child: ClipOval(
-                        child: Image(image: AssetImage('assets/img/foto1.png')),
-                      ),
-                    ),
-                    Container(
-                      width: 400,
-                      height: 400,
-                      margin: EdgeInsets.all(20),
+                      height: 205,
+                      margin: EdgeInsets.all(15),
                       child: DataTable(
                         dataTextStyle: TextStyle(color: Colors.white),
                         columns: const <DataColumn>[
@@ -53,58 +49,102 @@ class Profile extends StatelessWidget {
                               label: Text("Nama",
                                   style: TextStyle(color: Colors.white))),
                           DataColumn(
-                              label: Text("Azhar Rizky Aulia",
+                              label: Text("-",
                                   style: TextStyle(color: Colors.white))),
                         ],
                         rows: const <DataRow>[
                           DataRow(
                             cells: <DataCell>[
-                              DataCell(Text("Tempat Tanggal Lahir")),
-                              DataCell(Text("Bandung, 06 Maret 2005")),
-                            ],
-                          ),
-                          DataRow(
-                            cells: <DataCell>[
-                              DataCell(Text("Jenis Kelamin")),
-                              DataCell(Text("Laki-Laki")),
-                            ],
-                          ),
-                          DataRow(
-                            cells: <DataCell>[
-                              DataCell(Text("Agama")),
-                              DataCell(Text("Islam")),
-                            ],
-                          ),
-                          DataRow(
-                            cells: <DataCell>[
-                              DataCell(Text("Alamat")),
-                              DataCell(Text("Komplek Rancamanyar Regency 2")),
-                            ],
-                          ),
-                          DataRow(
-                            cells: <DataCell>[
-                              DataCell(Text("Sekolah")),
-                              DataCell(Text("SMK Assalaam Bandung")),
-                            ],
-                          ),
-                          DataRow(
-                            cells: <DataCell>[
-                              DataCell(Text("Kelas")),
-                              DataCell(Text("XII RPL 3")),
+                              DataCell(Text("Umur")),
+                              DataCell(Text("-")),
                             ],
                           ),
                           DataRow(
                             cells: <DataCell>[
                               DataCell(Text("Hobi")),
-                              DataCell(Text("Menggambar")),
+                              DataCell(Text("-\n-\n-")),
+                            ],
+                          ),
+                          DataRow(
+                            cells: <DataCell>[
+                              DataCell(Text("Github Profile")),
+                              DataCell(Text("-\n-")),
                             ],
                           ),
                         ],
                         decoration: BoxDecoration(
-                            color: Colors.lightBlueAccent,
+                            color: Colors.purpleAccent,
                             borderRadius: BorderRadius.circular(5)),
                       ),
-                    )
+                    ),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            width: 190,
+                            height: 100,
+                            margin: EdgeInsets.all(10),
+                            child: Center(
+                              child: Text(
+                                "Article",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 18),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                                color: Colors.pinkAccent,
+                                borderRadius: BorderRadius.circular(20)),
+                          ),
+                          Container(
+                            width: 190,
+                            margin: EdgeInsets.all(10),
+                            height: 100,
+                            child: Center(
+                              child: Text(
+                                "Article",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 18),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                                color: Colors.pinkAccent,
+                                borderRadius: BorderRadius.circular(20)),
+                          ),
+                        ]),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            width: 190,
+                            height: 100,
+                            margin: EdgeInsets.all(10),
+                            child: Center(
+                              child: Text(
+                                "Article",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 18),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                                color: Colors.pinkAccent,
+                                borderRadius: BorderRadius.circular(20)),
+                          ),
+                          Container(
+                            width: 190,
+                            margin: EdgeInsets.all(10),
+                            height: 100,
+                            child: Center(
+                              child: Text(
+                                "Article",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 18),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                                color: Colors.pinkAccent,
+                                borderRadius: BorderRadius.circular(20)),
+                          ),
+                        ]),
                   ],
                 )
               ],
