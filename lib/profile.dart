@@ -1,7 +1,28 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:parsing/sample_json.dart';
+import 'package:flutter/services.dart';
 
-class Profile extends StatelessWidget {
+class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
+
+  @override
+  State<Profile> createState() => _MyProfilePageState();
+}
+
+class _MyProfilePageState extends State<Profile> {
+  late String _jsonContent = "";
+  late String _name = "";
+  Future _loadSampleJson() async {
+    String jsonString = await rootBundle.loadString("assets/sample.json");
+    final jsonData = json.decode(jsonString);
+    Sample sample = Sample.fromJson(jsonData);
+    setState(() {
+      _jsonContent = sample.toString();
+      _name = sample.name.toString();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +61,7 @@ class Profile extends StatelessWidget {
                     ),
                     Container(
                       width: 400,
-                      height: 205,
+                      height: 400,
                       margin: EdgeInsets.all(15),
                       child: DataTable(
                         dataTextStyle: TextStyle(color: Colors.white),
@@ -56,6 +77,30 @@ class Profile extends StatelessWidget {
                           DataRow(
                             cells: <DataCell>[
                               DataCell(Text("Umur")),
+                              DataCell(Text("-")),
+                            ],
+                          ),
+                          DataRow(
+                            cells: <DataCell>[
+                              DataCell(Text("Tempat Tanggal Lahir")),
+                              DataCell(Text("-")),
+                            ],
+                          ),
+                          DataRow(
+                            cells: <DataCell>[
+                              DataCell(Text("Jenis Kelamin")),
+                              DataCell(Text("-")),
+                            ],
+                          ),
+                          DataRow(
+                            cells: <DataCell>[
+                              DataCell(Text("Agama")),
+                              DataCell(Text("-")),
+                            ],
+                          ),
+                          DataRow(
+                            cells: <DataCell>[
+                              DataCell(Text("Alamat")),
                               DataCell(Text("-")),
                             ],
                           ),
@@ -145,6 +190,23 @@ class Profile extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(20)),
                           ),
                         ]),
+                    GestureDetector(
+                      onTap: () {
+                        _loadSampleJson();
+                      },
+                      child: Container(
+                        height: 50,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            color: Colors.lightBlueAccent,
+                            borderRadius: BorderRadius.circular(20)),
+                        alignment: Alignment.center,
+                        child: const Text(
+                          "See My Profile",
+                          style: TextStyle(color: Colors.white, fontSize: 18),
+                        ),
+                      ),
+                    ),
                   ],
                 )
               ],
