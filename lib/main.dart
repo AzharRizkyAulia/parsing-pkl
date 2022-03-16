@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:parsing/sample_json.dart';
 import 'package:parsing/profile.dart';
+import 'package:parsing/sample_json.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
