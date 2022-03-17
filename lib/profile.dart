@@ -13,6 +13,9 @@ class Profile extends StatefulWidget {
 class _MyProfilePageState extends State<Profile> {
   late String _jsonContent = "";
   late String _name = "";
+  late String _age = "";
+  late String _username = "";
+  late String _repo = "";
   Future _loadSampleJson() async {
     String jsonString = await rootBundle.loadString("assets/sample.json");
     final jsonData = json.decode(jsonString);
@@ -20,6 +23,10 @@ class _MyProfilePageState extends State<Profile> {
     setState(() {
       _jsonContent = sample.toString();
       _name = sample.name.toString();
+      _age = sample.age.toString();
+      _age = sample.age.toString();
+      _username = sample.github!.username.toString();
+      _repo = sample.github!.repository.toString();
     });
   }
 
@@ -131,7 +138,7 @@ class _MyProfilePageState extends State<Profile> {
                             margin: EdgeInsets.all(10),
                             child: Center(
                               child: Text(
-                                "Article",
+                                _name,
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 18),
                               ),
@@ -146,7 +153,7 @@ class _MyProfilePageState extends State<Profile> {
                             height: 100,
                             child: Center(
                               child: Text(
-                                "Article",
+                                _age,
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 18),
                               ),
@@ -165,7 +172,7 @@ class _MyProfilePageState extends State<Profile> {
                             margin: EdgeInsets.all(10),
                             child: Center(
                               child: Text(
-                                "Article",
+                                _username,
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 18),
                               ),
@@ -180,7 +187,7 @@ class _MyProfilePageState extends State<Profile> {
                             height: 100,
                             child: Center(
                               child: Text(
-                                "Article",
+                                _repo,
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 18),
                               ),
@@ -197,6 +204,7 @@ class _MyProfilePageState extends State<Profile> {
                       child: Container(
                         height: 50,
                         width: 150,
+                        margin: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                             color: Colors.lightBlueAccent,
                             borderRadius: BorderRadius.circular(20)),
